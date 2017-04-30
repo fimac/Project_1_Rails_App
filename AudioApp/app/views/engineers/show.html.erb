@@ -1,6 +1,13 @@
 <h1><%= @engineer.name %></h1>
 <p>Bio: <%= @engineer.bio %></p>
 
+<h2>Upcoming recording sessions</h2>
+<%  @engineer.bookings.each do |i|%>
+  <p>Recording: <%= i.artist.name %> at <%= i.appointment_time %></p>
+<% end %>
+
+
+
 <div class="controls">
 <%= link_to("Edit engineer details", "/engineers/#{@engineer.id}/edit") %>
 <%= link_to("Delete engineer", "/engineers/#{@engineer.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
