@@ -1,0 +1,11 @@
+<h1>All bookings</h1>
+<p><%= @all_bookings.to_json%></p>
+
+<ul>
+  <% @all_bookings.each do |booking| %>
+    <li>
+      <%= Engineer.find_by(id: params['booking.engineer_id']) %>
+    </li>
+  <% end %>
+
+</ul>

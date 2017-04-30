@@ -21,3 +21,10 @@ b2 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), durati
 b3 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: steve.id, artist_id: rails.id)
 
 p "Booking count is #{Booking.all.count}"
+
+p "Booking 1 Engineer name: #{b1.engineer.name}"
+p "Steve Albini recording sessions: #{steve.bookings.all.count}"
+
+steve.bookings.each do |i|
+  p "Steve is recording:#{i.artist.name}"
+end
