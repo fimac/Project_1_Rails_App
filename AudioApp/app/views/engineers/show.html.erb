@@ -1,2 +1,7 @@
-<h1>Engineers#show</h1>
-<p>Find me in app/views/engineers/show.html.erb</p>
+<h1><%= @engineer.name %></h1>
+<p><%= @engineer.bio %></p>
+
+<div class="controls">
+<%= link_to("Edit engineer details", "/engineers/#{@engineer.id}/edit") %>
+<%= link_to("Delete engineer", "/engineers/#{@engineer.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
+</div>

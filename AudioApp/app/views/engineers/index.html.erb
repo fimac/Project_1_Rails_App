@@ -1,2 +1,11 @@
-<h1>Engineers#index</h1>
-<p>Find me in app/views/engineers/index.html.erb</p>
+<h1>Engineers index</h1>
+
+
+<ul>
+  <% @all_engineers.each do |engineer| %>
+    <li>
+      <%= link_to( engineer.name, "/engineers/#{engineer.id}" ) %>
+    </li>
+  <% end %>
+
+</ul>
