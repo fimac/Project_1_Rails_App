@@ -1,6 +1,6 @@
 <h1><%= @artist.name %></h1>
-<p><%= @artist.bio %></p>
-<img src="<%= @artist.image %>" alt="">
+<p>Bio: <%= @artist.bio %></p>
+<%= image_tag(@artist.image) %>
 
 <div class="controls">
 <%= link_to("Edit artist details", "/artists/#{@artist.id}/edit") %>
