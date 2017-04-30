@@ -1,19 +1,12 @@
 Rails.application.routes.draw do
-  get 'artists/index'
 
-  get 'artists/show'
 
-  get 'artists/new'
+get "/" => "pages#home"
 
-  get 'artists/edit'
+get '/about' => "pages#about"
 
-  get 'engineers/index'
+resources :engineers
 
-  get 'engineers/show'
+resources :artists
 
-  get 'engineers/new'
-
-  get 'engineers/edit'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
