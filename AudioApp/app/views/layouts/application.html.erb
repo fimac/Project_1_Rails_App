@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AudioApp</title>
+    <title>OdioApp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,19 @@
   </head>
 
   <body>
+
+    <nav>
+      <%= link_to("Home", "/") %>
+      <%= link_to("About", "/about") %>
+      <%= link_to("Engineers", "/engineers") %>
+      <%= link_to("Add Engineer", "/engineers/new") %>
+      <%= link_to("Artists", "/artists") %>
+      <%= link_to("Add Artists", "/artists/new") %>
+
+    </nav>
+
+    <hr>
     <%= yield %>
+    <hr>
   </body>
 </html>

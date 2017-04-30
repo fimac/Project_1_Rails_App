@@ -1,2 +1,8 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h1><%= @artist.name %></h1>
+<p><%= @artist.bio %></p>
+<img src="<%= @artist.image %>" alt="">
+
+<div class="controls">
+<%= link_to("Edit artist details", "/artists/#{@artist.id}/edit") %>
+<%= link_to("Delete artist", "/artists/#{@artist.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
+</div>
