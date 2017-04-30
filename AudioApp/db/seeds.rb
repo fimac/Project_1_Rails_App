@@ -13,3 +13,11 @@ grooming = Artist.create(name: "Grooming", bio: "Escaping from a farm back in 20
 rails = Artist.create(name: "Rails", bio: "They met each other through their love affair of acorns. The first album Oh Squirrel, my squirrel, hit #3 on the billboard music chart in 2006. Riding high on this, they released their unfortunately titled follow up, Hiding My Nuts in 2007, which was universally panned.", image: "http://static.boredpanda.com/blog/wp-content/uploads/2017/02/animals-about-to-drop-album-photos-58aeb22cb6327__700.jpg")
 
 p "Artist count is #{Artist.all.count}"
+
+Booking.destroy_all
+
+b1 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: steve.id, artist_id: hashrocket.id)
+b2 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: flood.id, artist_id: grooming.id)
+b3 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: steve.id, artist_id: rails.id)
+
+p "Booking count is #{Booking.all.count}"
