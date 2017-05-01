@@ -5,6 +5,9 @@
 <h2>Upcoming recording sessions</h2>
 <%  @artist.bookings.each do |i|%>
   <p>Recording: <%= i.engineer.name %> at <%= i.appointment_time %></p>
+  <div class="controls">
+    <%= link_to("Edit this booking", "/bookings/#{i.id}/edit") %>
+  </div>
 <% end %>
 
 <div class="controls">
