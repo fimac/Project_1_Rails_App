@@ -28,3 +28,14 @@ p "Steve Albini recording sessions: #{steve.bookings.all.count}"
 steve.bookings.each do |i|
   p "Steve is recording:#{i.artist.name}"
 end
+
+User.destroy_all
+
+u1 = User.create(name: "Don Zientara", email: "donz@gmail.com", user_type: "Audio Engineer", password: "chicken", password_confirmation: "chicken")
+u2 = User.create(name: "George Martin", email: "george@gmail.com", user_type: "Audio Engineer", password: "chicken", password_confirmation: "chicken")
+u3 = User.create(name: "PJ Harvey", email: "pj@gmail.com", user_type: "Artist", password: "chicken", password_confirmation: "chicken")
+
+p "Number of users: #{User.all.count}"
+p u1.password_digest
+p u2.password_digest
+p u3.password_digest
