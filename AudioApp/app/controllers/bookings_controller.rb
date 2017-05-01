@@ -4,11 +4,32 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find_by(id: params['id'])
   end
 
   def new
+    @booking = Booking.new
+  end
+
+  def create
+    booking = Booking.create( booking_params )
+    redirect_to "/bookings" #I want this to redirect to the artists list of upcoming bookings
   end
 
   def edit
+    @booking = Booking.find_by(id: params['id'])
+  end
+
+  def update
+
+  end
+
+  def destroy
+
+  end
+
+  private
+  def booking_params
+    params.require(:booking).permit(:artist_id, :engineer_id, :appointment_time)
   end
 end

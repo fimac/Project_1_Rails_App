@@ -1,5 +1,6 @@
 <h1><%= @engineer.name %></h1>
 <p>Bio: <%= @engineer.bio %></p>
+<%= link_to("Book me", "/bookings/new") %>
 
 <h2>Upcoming recording sessions</h2>
 <%  @engineer.bookings.each do |i|%>

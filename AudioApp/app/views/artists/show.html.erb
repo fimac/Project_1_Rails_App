@@ -2,6 +2,11 @@
 <p>Bio: <%= @artist.bio %></p>
 <%= image_tag(@artist.image) %>
 
+<h2>Upcoming recording sessions</h2>
+<%  @artist.bookings.each do |i|%>
+  <p>Recording: <%= i.engineer.name %> at <%= i.appointment_time %></p>
+<% end %>
+
 <div class="controls">
 <%= link_to("Edit artist details", "/artists/#{@artist.id}/edit") %>
 <%= link_to("Delete artist", "/artists/#{@artist.id}", method: :delete, data: { confirm: "Are you sure?"}) %>

@@ -1,2 +1,25 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
+<p>https://github.com/excid3/simple_calendar</p>
+
+
+
+<%=   form_for @booking do |f| %>
+  <p>
+      <%= f.label :artist_id %>
+      <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
+  </p>
+  <p>
+      <%= f.label :engineer_id %>
+      <%= f.collection_select(:engineer_id, Engineer.all, :id, :name) %>
+  </p>
+  <p>
+    <%= f.label :appointment_time, "Date of appointment" %>
+    <%= f.date_field :appointment_time %>
+  </p>
+
+  <%= f.submit %>
+
+
+
+<% end %>
