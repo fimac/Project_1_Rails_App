@@ -7,10 +7,12 @@
   <p>Recording: <%= i.engineer.name %> at <%= i.appointment_time %></p>
   <div class="controls">
     <%= link_to("Edit this booking", "/bookings/#{i.id}/edit") %>
+    <%= link_to("Delete this booking", "/bookings/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
   </div>
 <% end %>
-
+<hr>
 <div class="controls">
 <%= link_to("Edit artist details", "/artists/#{@artist.id}/edit") %>
 <%= link_to("Delete artist", "/artists/#{@artist.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
 </div>
+<hr>

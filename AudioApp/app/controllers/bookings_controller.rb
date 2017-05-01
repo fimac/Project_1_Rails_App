@@ -27,7 +27,9 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-
+    booking = Booking.find_by(id: params['id'])
+    booking.destroy
+    redirect_to "/bookings"
   end
 
   private
