@@ -10,19 +10,23 @@
 
   <body>
 
-    <nav>
-      <%= link_to("Home", "/") %>
-      <%= link_to("About", "/about") %>
-      <%= link_to("Engineers", "/engineers") %>
-      <%= link_to("Add Engineer", "/engineers/new") %>
-      <%= link_to("Artists", "/artists") %>
-      <%= link_to("Add Artists", "/artists/new") %>
-      <%= link_to("All bookings", "/bookings") %>
+    <nav class="teal lighten-2">
+      <div class="nav-wrapper">
+        <ul>
 
+        <li><%= link_to("Home", "/") %></li>
+        <li><%= link_to("About", "/about") %></li>
+        <li><%= link_to("Engineers", "/engineers") %></li>
+        <li><%= link_to("Add Engineer", "/engineers/new") %></li>
+        <li><%= link_to("Artists", "/artists") %></li>
+        <li><%= link_to("Add Artists", "/artists/new") %></li>
+        <li><%= link_to("All bookings", "/bookings") %></li>
+        </ul>
+      </div>
     </nav>
 
-    <hr>
+    <div class="container">
     <%= yield %>
-    <hr>
+    </div>
   </body>
 </html>
