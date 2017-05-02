@@ -13,6 +13,8 @@ class EngineersController < ApplicationController
 
   def create
     engineer = Engineer.create ( engineer_strong_params )
+    engineer.user = @current_user
+    engineer.save
     redirect_to "/engineers/#{engineer.id}"
   end
 

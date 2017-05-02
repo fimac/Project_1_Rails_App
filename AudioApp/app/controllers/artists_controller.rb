@@ -13,6 +13,8 @@ class ArtistsController < ApplicationController
 
   def create
     artist = Artist.create( artist_strong_params )
+    artist.user = @current_user
+    artist.save
     redirect_to "/artists/#{artist.id}"
   end
 

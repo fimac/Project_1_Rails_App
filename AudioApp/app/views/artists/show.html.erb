@@ -11,8 +11,3 @@
     <%= link_to("Delete this booking", "/bookings/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
   </div>
 <% end %>
-
-<div class="controls">
-<%= link_to("Edit artist details", "/artists/#{@artist.id}/edit") %>
-<%= link_to("Delete artist", "/artists/#{@artist.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
-</div>

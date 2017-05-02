@@ -10,11 +10,3 @@
     <%= link_to("Delete this booking", "/bookings/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
   </div>
 <% end %>
-
-
-<hr>
-<div class="controls">
-<%= link_to("Edit engineer details", "/engineers/#{@engineer.id}/edit") %>
-<%= link_to("Delete engineer", "/engineers/#{@engineer.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
-</div>
-<hr>
