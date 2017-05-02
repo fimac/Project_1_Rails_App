@@ -2,6 +2,8 @@
 <p>Bio: <%= @engineer.bio %></p>
 <%= link_to("Book me", "/bookings/new") %>
 
+<%= @engineer.bookings.to_json %>
+
 <h2>Upcoming recording sessions</h2>
 <%  @engineer.bookings.each do |i|%>
   <p>Recording: <%= i.artist.name %> at <%= i.appointment_time %></p>

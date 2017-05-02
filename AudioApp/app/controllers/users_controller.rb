@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params['id'])
 
+    # b1 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), engineer_id: @current_user.id, artist_id: Artist.last.id, user_id: @current_user.id)
+    #
+    #  @eng_book = Booking.where(engineer_id: @current_user)
+    # irb
+
   end
 
   def new
