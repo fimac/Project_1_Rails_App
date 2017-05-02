@@ -1,2 +1,16 @@
 <h1><%= @user.name %></h1>
-<p>User type: <%= @user.user_type %></p>
+
+<h3>My Artist profiles</h3>
+
+<ul>
+<% @user.artists.each do |i| %>
+  <li><%= link_to( i.name, "/artists/#{i.id}" ) %></li>
+<% end %>
+</ul>
+
+<h3>My Engineer profile</h3>
+<ul>
+  <% @user.engineers.each do |i| %>
+  <li><%= link_to(i.name, "/engineers/#{i.id}") %></li>
+  <% end %>
+</ul>
