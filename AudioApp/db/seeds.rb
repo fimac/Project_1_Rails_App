@@ -53,7 +53,7 @@ end
 
 # For an artist, print out the user
 
-p "#{shellac.user.name}"
+p "The band shellac is created by #{shellac.user.name}"
 #For a user, print out the artists under that user id
  u4.artists.each do |i|
    p "Steve is in #{i.name}"
@@ -61,6 +61,17 @@ p "#{shellac.user.name}"
 
  #For a user, print out the engineer listings under that user id
 
+
+
  u4.engineers.each do |i|
    p "Steve's engineer listing #{i.name}"
  end
+
+ # In the same way an engineer has many artists through bookings
+  # A user would have many bookings through their engineer profile
+# Test assoication, I want u4 to be able to see what bookings they have
+# through their engineer profile
+
+# u4.engineers.bookings.each do |i|
+#   p "#{i.name}"
+# end

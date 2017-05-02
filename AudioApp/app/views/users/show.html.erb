@@ -13,6 +13,12 @@
 <% end %>
 </ul>
 
+<h3>My Upcoming recording sessions as an artist</h3>
+<% @user.bookings.each do |i| %>
+  <li> Your band <%= i.artist.name %> is being recorded by <%= i.engineer.name %> at <%= i.appointment_time %></li>
+<% end %>
+
+
 <h3>My Engineer profile</h3>
 <ul>
   <% @user.engineers.each do |i| %>
@@ -22,3 +28,7 @@
   <li><%= link_to("Delete engineer profile", "/engineers/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %></li>
   <% end %>
 </ul>
+
+<h3>My Upcoming recording sessions as an audio engineer</h3>
+<p><%= @user.bookings.to_json %></p>
+<p><%= @engineer.to_json %></p>
