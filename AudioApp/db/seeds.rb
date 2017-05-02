@@ -7,10 +7,12 @@ u3 = User.create(name: "PJ Harvey", email: "pj@gmail.com", password: "chicken", 
 u4 = User.create(name: "Steve Albini", email: "steve@gmail.com", password: "chicken", password_confirmation: "chicken")
 
 p "Number of users: #{User.all.count}"
-p u1.password_digest
-p u2.password_digest
-p u3.password_digest
-p u4.password_digest
+
+
+
+
+
+
 
 Engineer.destroy_all
 
@@ -26,6 +28,7 @@ hashrocket = Artist.create(name: "Hash Rocket", bio: "Founded by Ginger in 2004,
 grooming = Artist.create(name: "Grooming", bio: "Escaping from a farm back in 2004, Grooming released their hit single Meat Bad in 2005. This led to their hit album, Fur Feather Love in 2006.", image: "http://static.boredpanda.com/blog/wp-content/uploads/2017/02/animals-about-to-drop-album-photos-58aeb2b30934d__700.jpg")
 rails = Artist.create(name: "Rails", bio: "They met each other through their love affair of acorns. The first album Oh Squirrel, my squirrel, hit #3 on the billboard music chart in 2006. Riding high on this, they released their unfortunately titled follow up, Hiding My Nuts in 2007, which was universally panned.", image: "http://static.boredpanda.com/blog/wp-content/uploads/2017/02/animals-about-to-drop-album-photos-58aeb22cb6327__700.jpg")
 shellac = Artist.create(name: "Shellac", bio: "Shellac formed in Chicago, Illinois, in 1992 as an informal collaboration between guitarist Steve Albini and drummer Todd Trainer. Shellac has a distinctive, minimalist sound based on asymmetric time signatures, repetitive rhythms, an angular guitar sound", image: "https://brassneckreviews.files.wordpress.com/2014/01/shellac-1.jpg", user_id: u4.id)
+bigblack = Artist.create(name: "Big Black", bio: "Big Black was an American punk rock band from Evanston, Illinois, active from 1981 to 1987. Founded by singer and guitarist Steve Albini.", image: "https://upload.wikimedia.org/wikipedia/en/8/85/Big_Black.jpg", user_id: u4.id)
 
 p "Artist count is #{Artist.all.count}"
 
@@ -34,7 +37,7 @@ Booking.destroy_all
 b1 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: steve.id, artist_id: hashrocket.id)
 b2 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: flood.id, artist_id: grooming.id)
 b3 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), duration: 1, engineer_id: steve.id, artist_id: rails.id)
-
+# Test association between bookings and engineers and artists
 p "Booking count is #{Booking.all.count}"
 
 p "Booking 1 Engineer name: #{b1.engineer.name}"
@@ -43,3 +46,21 @@ p "Steve Albini recording sessions: #{steve.bookings.all.count}"
 steve.bookings.each do |i|
   p "Steve is recording:#{i.artist.name}"
 end
+
+# I want to test the association between a user and their engineer profile
+# I want to test the association between a user and their artist profile
+# Currently Steve Albini has an engineer profile as well as an artist profile as Shellac
+
+# For an artist, print out the user
+
+p "#{shellac.user.name}"
+#For a user, print out the artists under that user id
+ u4.artists.each do |i|
+   p "Steve is in #{i.name}"
+ end
+
+ #For a user, print out the engineer listings under that user id
+
+ u4.engineers.each do |i|
+   p "Steve's engineer listing #{i.name}"
+ end
