@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @duration = (0..12).to_a
   end
 
   def create

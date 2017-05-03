@@ -1,7 +1,13 @@
 <h1><%= @engineer.name %></h1>
 <p>Bio: <%= @engineer.bio %></p>
+<div>
+<%= image_tag(@engineer.image) %>
+</div>
 
 
+
+
+<div class="booking">
 <% if @current_user %>
   <%= link_to("Make a booking", "/bookings/new") %>
   <% if @current_user.id == @engineer.user_id %>
@@ -15,3 +21,4 @@
     <% end %>
   <% end %>
 <% end %>
+</div>

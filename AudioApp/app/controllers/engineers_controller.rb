@@ -36,6 +36,18 @@ class EngineersController < ApplicationController
     redirect_to "/engineers"
   end
 
+  def upvote
+  @engineer = Engineer.find_by(id: params['id'])
+  @engineer.upvote_by @current_user
+  redirect_to :back
+  end
+
+def downvote
+  @engineer = Engineer.find_by(id: params['id'])
+  @engineer.downvote_by @current_user
+  redirect_to :back
+end
+
   private
   def engineer_strong_params
     params.require(:engineer).permit(:name, :bio, :image)

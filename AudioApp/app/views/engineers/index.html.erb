@@ -1,14 +1,22 @@
 <h1>Engineers index</h1>
 
 
-<ul>
-  <% @all_engineers.each do |engineer| %>
-    <li>
-      <%= link_to( engineer.name, "/engineers/#{engineer.id}" ) %>
-    </li>
-  <% end %>
-
 </ul>
+<% @all_engineers.each do |engineer| %>
+<h4>
+  <%= link_to( engineer.name, "/engineers/#{engineer.id}" ) %> <br>
+  Submitted <%= time_ago_in_words(engineer.created_at) %>
+  ago by <%= @current_user.email %>
+</h4>
+<%= link_to like_engineer_path(engineer), method: :put do %>
+  Upvote
+  <%= engineer.get_upvotes.size %>
+<% end %>
+<%= link_to dislike_engineer_path(engineer), method: :put do %>
+  Downvote
+  <%= engineer.get_downvotes.size %>
+<% end %>
+<% end %>
 
 <% if @current_user %>
 <p>

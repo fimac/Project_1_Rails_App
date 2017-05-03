@@ -8,8 +8,6 @@ u5 = User.create(name: "Flood", email: "flood@gmail.com", user_type: "Engineer",
 
 p "Number of users: #{User.all.count}"
 
-# test cases marty - audio engineer
-# fiona - creates a band called test band
 
 
 
@@ -17,9 +15,9 @@ p "Number of users: #{User.all.count}"
 
 Engineer.destroy_all
 
-steve = Engineer.create(name: "Steve Albini", bio: "Owner and engineer at Electrical Audio Chicago", user_id: u1.id)
-flood = Engineer.create(name: "Flood", bio: "Co Owner and engineer at Assault & Battery 1, London", user_id: u5.id)
-rick = Engineer.create(name: "Rick Rubin", bio: "The only producer you need", user_id: u4.id)
+steve = Engineer.create(name: "Steve Albini", bio: "Owner and engineer at Electrical Audio Chicago", image: "http://weeklong.mixwiththemasters.com/wp-content/uploads/2014/08/MG_1074.jpg-.jpg", user_id: u1.id)
+flood = Engineer.create(name: "Flood", bio: "Co Owner and engineer at Assault & Battery 1, London", image: "http://www.theminimalbeat.com/wp-content/uploads/2016/07/1-5.jpg", user_id: u5.id)
+rick = Engineer.create(name: "Rick Rubin", bio: "The only producer you need", image: "http://cdn.pastemagazine.com/www/articles/RickRubin_PhotoBryceDuffy.jpg?1372335392", user_id: u4.id)
 
 
 p "Engineer count is #{Engineer.all.count}"
@@ -44,47 +42,9 @@ b4 = Booking.create(appointment_time: DateTime.parse("03/05/2017 13:00"), engine
 # Test association between bookings and engineers and artists
 p "Booking count is #{Booking.all.count}"
 #
-# p "Booking 1 Engineer name: #{b1.engineer.name}"
-p "Steve Albini recording sessions: #{steve.bookings.all.count}"
-#
-# steve.bookings.each do |i|
-#   p "Steve is recording:#{i.artist.name}"
-# end
 
-# I want to test the association between a user and their engineer profile
-# I want to test the association between a user and their artist profile
-# Currently Steve Albini has an engineer profile as well as an artist profile as Shellac
+Post.destroy_all
 
-# For an artist, print out the user
-
-# p "The band shellac is created by #{shellac.user.name}"
-#For a user, print out the artists under that user id
- # u1.artists.each do |i|
- #   p "Steve is in #{i.name}"
- # end
-
- #For a user, print out the engineer listings under that user id
-
-
-
- # u4.engineers.each do |i|
- #   p "Steve's engineer listing #{i.name}"
- # end
-
- # In the same way an engineer has many artists through bookings
-  # A user would have many bookings through their engineer profile
-# Test assoication, I want u4 to be able to see what bookings they have
-# through their engineer profile
-
-# u4.engineers.bookings.each do |i|
-#   p "#{i.name}"
-# end
-
-
-
-
-# In the user view, I want to view if the user has an engineer profile (done)
-# I then want to see what bookings they have as an engineer
-# The booking that is listed under their engineer name, is booked by a different user
-# The booking has the engineer id listed
-#
+p1 = Post.create(heading: "Post 1", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora recusandae quo fugit labore a nemo quos asperiores modi! Inventore esse aperiam animi soluta accusantium nihil dicta, rem et incidunt!", user_id: u1.id)
+p2 = Post.create(heading: "Post 2", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora recusandae quo fugit labore a nemo quos asperiores modi! Inventore esse aperiam animi soluta accusantium nihil dicta, rem et incidunt!", user_id: u2.id)
+p3 = Post.create(heading: "Post 3", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. In tempora recusandae quo fugit labore a nemo quos asperiores modi! Inventore esse aperiam animi soluta accusantium nihil dicta, rem et incidunt!", user_id: u3.id)
