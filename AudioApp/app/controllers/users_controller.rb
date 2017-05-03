@@ -4,8 +4,6 @@ class UsersController < ApplicationController
 
   def show
     @eng_user = @current_user.engineers
-
-
   end
 
   def new
@@ -16,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new( user_params )
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path( @user ) # I need this to redirect to either engineer show/artist show depending on user_type
+      redirect_to user_path( @user )
     else
       render :new
     end

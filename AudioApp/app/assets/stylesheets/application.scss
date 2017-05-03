@@ -14,3 +14,57 @@
  *= require_self
  */
  // @import 'materialize';
+
+
+a:hover {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  transition: font_size 1s;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+}
+body {
+  background-image: url("http://i.imgur.com/9eyIXzo.jpg");
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFF;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 400px;
+  border-radius: 0 5px 0 5px;
+}
+
+
+select {
+  border: 2px solid yellow;
+}
+
+.vote {
+  display: inline-block;
+}
+
+.main-title:hover span {
+  display: none;
+}
+
+.main-title:hover:before {
+  content: "ODIO = オーディオ = Audio"
+}
+
+.about {
+  text-align: center;
+}

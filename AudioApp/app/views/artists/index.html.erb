@@ -1,16 +1,16 @@
-<h1>Artists index</h1>
+<h1>Artists</h1>
 
 
 <ul>
   <% @all_artists.each do |artist| %>
     <li>
-      <%= link_to( artist.name, "/artists/#{artist.id}" ) %>
+      <%= link_to( artist.name, "/artists/#{artist.id}", class: "index" ) %>
     </li>
   <% end %>
 </ul>
 
 <% if @current_user %>
 <p>
-<%= link_to("Create Artist Profile", "/artists/new") %>
+<%= link_to("Create Artist Profile", "/artists/new", class: "create") %>
 </p>
 <% end %>

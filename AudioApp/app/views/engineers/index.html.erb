@@ -1,25 +1,29 @@
-<h1>Engineers index</h1>
+<h1>Audio Engineers</h1>
 
 
 </ul>
 <% @all_engineers.each do |engineer| %>
-<h4>
-  <%= link_to( engineer.name, "/engineers/#{engineer.id}" ) %> <br>
-  Submitted <%= time_ago_in_words(engineer.created_at) %>
-  ago by <%= @current_user.email %>
-</h4>
-<%= link_to like_engineer_path(engineer), method: :put do %>
+<li>
+  <%= link_to( engineer.name, "/engineers/#{engineer.id}", class: "index" ) %> <br>
+</li>
+<li>
+<%= link_to like_engineer_path(engineer), class: "vote", method: :put do %>
   Upvote
   <%= engineer.get_upvotes.size %>
 <% end %>
-<%= link_to dislike_engineer_path(engineer), method: :put do %>
+<%= link_to dislike_engineer_path(engineer), class: "vote", method: :put do %>
   Downvote
   <%= engineer.get_downvotes.size %>
 <% end %>
+</li>
+<li>
+Submitted <%= time_ago_in_words(engineer.created_at) %>
+ago by <%= @current_user.email %>
 <% end %>
+</li>
 
 <% if @current_user %>
 <p>
- <%= link_to("Create Engineer Profile", "/engineers/new") %>
+ <%= link_to("Create Engineer Profile", "/engineers/new", class: "create") %>
 </p>
 <% end %>
