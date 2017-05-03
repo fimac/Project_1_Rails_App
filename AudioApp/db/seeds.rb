@@ -17,9 +17,9 @@ p "Number of users: #{User.all.count}"
 
 Engineer.destroy_all
 
-steve = Engineer.create(name: "Steve Albini", bio: "Owner and engineer at Electrical Audio Chicago", user_id: u1.id)
-flood = Engineer.create(name: "Flood", bio: "Co Owner and engineer at Assault & Battery 1, London", user_id: u5.id)
-rick = Engineer.create(name: "Rick Rubin", bio: "The only producer you need", user_id: u4.id)
+steve = Engineer.create(name: "Steve Albini", bio: "Owner and engineer at Electrical Audio Chicago", image: "http://weeklong.mixwiththemasters.com/wp-content/uploads/2014/08/MG_1074.jpg-.jpg", user_id: u1.id)
+flood = Engineer.create(name: "Flood", bio: "Co Owner and engineer at Assault & Battery 1, London", image: "http://www.theminimalbeat.com/wp-content/uploads/2016/07/1-5.jpg", user_id: u5.id)
+rick = Engineer.create(name: "Rick Rubin", bio: "The only producer you need", image: "http://vignette4.wikia.nocookie.net/lanadelrey/images/0/00/Rick_Rubin.jpg", user_id: u4.id)
 
 
 p "Engineer count is #{Engineer.all.count}"
@@ -67,9 +67,9 @@ p "Steve Albini recording sessions: #{steve.bookings.all.count}"
 
 
 
- # u4.engineers.each do |i|
- #   p "Steve's engineer listing #{i.name}"
- # end
+ u4.engineers.each do |i|
+   p "Steve's engineer listing #{i.name}"
+ end
 
  # In the same way an engineer has many artists through bookings
   # A user would have many bookings through their engineer profile
