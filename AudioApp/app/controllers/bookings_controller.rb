@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     booking = Booking.create( booking_params )
     booking.user = @current_user
     booking.save
-    redirect_to "/bookings" #I want this to redirect to the artists list of upcoming bookings
+    redirect_to "/bookings/#{booking.id}" #I want this to redirect to the artists list of upcoming bookings
   end
 
   def edit

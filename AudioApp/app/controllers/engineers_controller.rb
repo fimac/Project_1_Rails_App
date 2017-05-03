@@ -5,6 +5,8 @@ class EngineersController < ApplicationController
 
   def show
     @engineer = Engineer.find_by( id: params['id'] )
+    # @eng_booking = @engineer.bookings
+    # @eng = @current_user.engineers
   end
 
   def new

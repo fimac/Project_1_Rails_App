@@ -5,6 +5,8 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find_by( id: params['id'] )
+    # @art_booking = @artist.bookings
+    # @art = @current_user.artists
   end
 
   def new

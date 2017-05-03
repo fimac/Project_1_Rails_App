@@ -2,8 +2,8 @@
 <p>Bio: <%= @engineer.bio %></p>
 <%= link_to("Book me", "/bookings/new") %>
 
-<%= @engineer.bookings.to_json %>
 
+<% if @current_user.id == @engineer.user_id %>
 <h2>Upcoming recording sessions</h2>
 <%  @engineer.bookings.each do |i|%>
   <p>Recording: <%= i.artist.name %> at <%= i.appointment_time %></p>
@@ -11,4 +11,5 @@
     <%= link_to("Edit this booking", "/bookings/#{i.id}/edit") %>
     <%= link_to("Delete this booking", "/bookings/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %>
   </div>
+<% end %>
 <% end %>

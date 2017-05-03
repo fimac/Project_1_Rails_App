@@ -1,9 +1,12 @@
-<h1><%= @user.name %></h1>
+<h1><%= @current_user.name %></h1>
 
+
+
+<%# if @current_user.user_type == "Artist" %>
 <h3>My Artist profiles</h3>
 
 <ul>
-<% @user.artists.each do |i| %>
+<% @current_user.artists.each do |i| %>
   <hr>
   <li><%= link_to( i.name, "/artists/#{i.id}" ) %></li>
   <hr>
@@ -12,25 +15,16 @@
   <hr>
 <% end %>
 </ul>
+<% #end %>
 
-<h3>My Upcoming recording sessions as an artist</h3>
-<%#= @user.bookings.to_json %>
-<% @user.bookings.each do |i| %>
-  <li> Your band <%= i.artist.name %> is being recorded by <%= i.engineer.name %> at <%= i.appointment_time %></li>
-<% end %>
-
-
+<% #if @current_user.user_type == "Engineer" %>
 <h3>My Engineer profile</h3>
-
 <ul>
-  <% @user.engineers.each do |i| %>
+  <% @current_user.engineers.each do |i| %>
   <li><%= link_to(i.name, "/engineers/#{i.id}") %></li>
   <hr>
   <li><%= link_to("Edit Engineer profile", "/engineers/#{i.id}/edit") %></li>
   <li><%= link_to("Delete engineer profile", "/engineers/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %></li>
   <% end %>
 </ul>
-
-
-<h3>My Upcoming recording sessions as an audio engineer</h3>
-<p>I am recording <%= @user.engineers.to_json %></p>
+<% #end %>
