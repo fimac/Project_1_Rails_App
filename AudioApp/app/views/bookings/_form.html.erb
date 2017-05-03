@@ -14,10 +14,9 @@
 
 
   <p>
-    <%= f.label :appointment_time, "Date of appointment" %>
-    <%= f.datetime_select :appointment_time %>
+    <%= f.label :appointment_time, "Date/Time of appointment" %>
+    <%= f.datetime_select :appointment_time, :class => "calendar"%>
   </p>
-
 
 
   <%= f.submit %>
