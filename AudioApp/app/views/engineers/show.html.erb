@@ -11,9 +11,11 @@
 
 
 
-<div class="booking">
+  <div class="booking">
 <% if @current_user %>
   <%= link_to("Make a booking", "/bookings/new") %>
+  </div>
+  <div>
   <% if @current_user.id == @engineer.user_id %>
     <h2>Upcoming recording sessions</h2>
     <%  @engineer.bookings.each do |i|%>
