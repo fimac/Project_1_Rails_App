@@ -10,5 +10,5 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil unless @current_user.present?
   end
 
-  # I need to add a method here for current time to post 
+
 end

@@ -15,5 +15,4 @@ $(document).ready(function () {
 
 });
 
-$('#idnameHere').toggleClass('class')
 // console.log("Hello, world")
