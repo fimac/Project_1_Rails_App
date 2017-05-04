@@ -1,6 +1,6 @@
 # Project_1_Rails_App
 
-# README
+Public URL link https://odioapp.herokuapp.com/
 
 
 Technologies
