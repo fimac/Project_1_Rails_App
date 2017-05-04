@@ -76,7 +76,7 @@ Additional features
 Unsolved problems
 
   The upvotes submitted timings.
-  CSS - Materialize was too strict for what I wanted. I tried a few of the alternatives. I'm using purecss, but the pages are still not as responsive as I would like them.
+  CSS - Materialize was too strict for what I wanted. I tried a few of the alternatives. I ended up using purecss, which gave the right amount of flexibility between using their classes as well as any other formatting that you need.
   The burger menu seems to freeze intermittently, locally as well as via Heroku.
   I struggled with formatting ruby forms.
   Implementing a proper booking system.
