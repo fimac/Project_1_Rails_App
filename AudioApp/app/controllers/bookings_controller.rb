@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     booking = Booking.create( booking_params )
     booking.user = @current_user
     booking.save
-    redirect_to "/bookings/#{booking.id}" 
+    redirect_to "/bookings/#{booking.id}"
   end
 
   def edit
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
   def destroy
     booking = Booking.find_by(id: params['id'])
     booking.destroy
-    redirect_to "/bookings"
+    redirect_to "/users/#{@current_user.id}"
   end
 
   private
