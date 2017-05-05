@@ -6,7 +6,7 @@ post '/login' => 'session#create'
 
 delete '/logout' => 'session#destroy'
 
-resources :users, :posts
+resources :users
 
 root to: "pages#home"
 
