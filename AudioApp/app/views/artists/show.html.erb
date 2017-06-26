@@ -6,6 +6,7 @@
   </div>
   <div class="pure-u-1-2 pure-u-md-1-3">
     <p><%= @artist.bio %></p>
+    <p><a href="mailto:<%= @artist.user.email %>">Contact details: <%= @artist.user.email %></a></p>
   </div>
 </div>
 

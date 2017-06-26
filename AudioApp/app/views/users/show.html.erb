@@ -1,5 +1,5 @@
-<h1><%= @current_user.name %></h1>
-
+<h1><%= @current_user.name %>'s dashboard</h1>
+<p>Click on the relevant profile to see your upcoming recording sessions</p>
 
 
 
@@ -7,9 +7,8 @@
 
 <ul>
 <% @current_user.artists.each do |i| %>
-  <hr>
   <li><%= link_to( i.name, "/artists/#{i.id}" ) %></li>
-  <hr>
+  <li><%= image_tag(i.image)  %></li>
   <li><%= link_to("Edit Artist profile", "/artists/#{i.id}/edit") %></li>
   <li><%= link_to("Delete Artist profile", "/artists/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %></li>
   <hr>
@@ -22,7 +21,7 @@
 <ul>
   <% @current_user.engineers.each do |i| %>
   <li><%= link_to(i.name, "/engineers/#{i.id}") %></li>
-  <hr>
+  <%= image_tag(i.image) %>
   <li><%= link_to("Edit Engineer profile", "/engineers/#{i.id}/edit") %></li>
   <li><%= link_to("Delete engineer profile", "/engineers/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %></li>
   <% end %>

@@ -10,14 +10,14 @@ h3 {
   color: white;
 }
 
-a:hover {
-  font-size: 20px;
-}
-
 a {
   text-decoration: none;
   color: #FFF;
   transition: font-size 0.3s;
+}
+
+a:hover {
+  color: #F3A31B;
 }
 
 .controls a {
@@ -44,12 +44,16 @@ body {
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.content {
+.container {
   width: 80vw;
   margin: 0 auto;
+}
+
+.eng-art-index img {
+  height: 20vh;
 }
 
 p {
