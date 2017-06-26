@@ -16,7 +16,7 @@
   <% if @current_user.id == @artist.user_id %>
     <h2>Upcoming recording sessions</h2>
     <%  @artist.bookings.each do |i|%>
-      <p>You are recording with <%= i.engineer.name %> on <%= i.appointment_time.strftime("%b %d, %Y at %I:%M %P") %></p>
+      <p><%= @artist.name %> is recording with <%= i.engineer.name %> on <%= i.appointment_time.strftime("%b %d, %Y at %I:%M %P") %></p>
       <div class="controls">
         <%= link_to("Edit this booking", "/bookings/#{i.id}/edit") %>
         <%= link_to("Delete this booking", "/bookings/#{i.id}", method: :delete, data: { confirm: "Are you sure?"}) %>

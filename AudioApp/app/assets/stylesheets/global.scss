@@ -22,6 +22,7 @@ a:hover {
 
 .controls a {
   border: 2px solid white;
+  padding: 5px;
   border-radius: 5px;
   margin-right: 5px;
 }
@@ -38,13 +39,16 @@ a:hover {
   margin-top: 150px;
 }
 
-
 body {
   background-image: url("http://i.imgur.com/9eyIXzo.jpg");
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
+}
+
+.intro {
+  text-align: center;
 }
 
 .container {
